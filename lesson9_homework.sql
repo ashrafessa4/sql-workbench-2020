@@ -32,15 +32,34 @@
   on s.salesman_id=o.salesman_id
 7.
   select c.cust_name, s.name
-	from customer as c
-	join salesman as s
+  from customer as c
+  join salesman as s
   on c.salesman_id=s.salesman_id
   order by c.customer_id asc;
 8. 
   select c.cust_name, c.grade, s.name
+  from customer as c
+  join salesman as s
+  on c.salesman_id=s.salesman_id
+  where c.grade < 300
+  order by s.salesman_id asc
+9.
+  select c.cust_name, c.city, o.ord_no, o.ord_date, o.purch_amt
+  from customer as c
+  join orders as o
+  on c.customer_id=o.customer_id
+  order by o.ord_date asc
+10.
+  select c.cust_name, c.city, o.ord_no, o.ord_date, o.purch_amt, s.name, s.commission
+  from customer as c
+  join orders as o
+  on c.customer_id=o.customer_i
+  join salesman as s
+  on s.salesman_id=c.salesman_id
+11.
+  select s.name, c.cust_name
     from customer as c
     join salesman as s
-    on c.salesman_id=s.salesman_id
-    where c.grade < 300
-    order by s.salesman_id asc
-  
+    on s.salesman_id=c.salesman_id
+    order by s.salesman_id
+12.
