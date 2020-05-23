@@ -77,4 +77,30 @@
    on c.customer_id=o.customer_id
    where o.purch_amt > 2000
    on c.customer_id=o.customer_id
- 14.
+14.
+   select c.cust_name, c.city, o.ord_no, o.ord_date, o.purch_amt
+   from customer as c
+   join orders as o
+   on c.customer_id=o.customer_id
+15.
+   select c.cust_name, c.city, o.ord_no, o.ord_date, o.purch_amt, c.grade
+   from customer as c
+   join orders as o
+   on c.customer_id=o.customer_id
+16.
+   select *
+   from salesman as s
+   cross join customer as c
+17.
+   select *
+   from salesman as s
+   cross join customer as c
+18.
+   select *
+   from salesman as s
+   cross join customer as c
+19.
+   select *
+   from salesman as s
+   cross join customer as c
+   where s.city != c.city
