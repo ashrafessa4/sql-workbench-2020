@@ -58,8 +58,23 @@
   on s.salesman_id=c.salesman_id
 11.
   select s.name, c.cust_name
-    from customer as c
-    join salesman as s
-    on s.salesman_id=c.salesman_id
-    order by s.salesman_id
+  from customer as c
+  join salesman as s
+  on s.salesman_id=c.salesman_i
+  order by s.salesman_id
 12.
+   select s.name, c.cust_name, o.ord_no
+   from customer as c
+   join salesman as s
+   on c.salesman_id=s.salesman_id
+   join orders as o
+13.
+   select s.name, c.cust_name, o.ord_no, o.purch_amt, c.grade
+   from salesman as s
+   join customer as c
+   on s.salesman_id=c.salesman_id
+   join orders as o
+   on c.customer_id=o.customer_id
+   where o.purch_amt > 2000
+   on c.customer_id=o.customer_id
+ 14.
